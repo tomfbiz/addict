@@ -41,4 +41,14 @@ defmodule AuthenticatedTest do
     assert conn.status in 300..399
     assert get_resp_header(conn, "location") == ["/login"]
   end
+
+  test "does nothing if no session and user assigned", context do
+    conn = context.conn
+      |> delete_session(:current_user)
+      |> assign(:current_user, "joe")
+
+    conn = Auth.call(conn, @authenticated_opts)
+    assert conn.assigns.current_user == "joe"
+    refute conn.halted
+  end
 end
