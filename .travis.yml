@@ -4,7 +4,7 @@ before_script:
   - psql -c 'create database addict_test;' -U postgres
 language: elixir
 elixir:
-  - 19.0
+  - 1.4.2
 otp_release:
   - 18.2.1
 sudo: false
