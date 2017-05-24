@@ -17,7 +17,7 @@ defmodule Addict.Plugs.Authenticated do
   possible to always retrieve the user via `conn.assigns.current_user`.
 
   If the current_user is already in assigns, the plug does nothing.
-  This allows for creating tests withought creating a session.
+  This allows for creating tests without creating a session.
 
   In case the user is not logged in, it will redirect the request to
   the Application :addict :not_logged_in_url page. If none is defined, it will
