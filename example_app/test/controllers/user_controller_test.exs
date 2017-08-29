@@ -2,6 +2,7 @@ defmodule ExampleApp.UserControllerTest do
   use ExampleApp.ConnCase
 
   alias ExampleApp.User
+  
   @valid_attrs %{email: "some content", encrypted_password: "some content", name: "some content"}
   @invalid_attrs %{}
 
