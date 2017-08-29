@@ -30,7 +30,7 @@ defmodule ExampleApp.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-    [{:phoenix, "~> 1.2"},
+    [{:phoenix, "~> 1.2.1"},
      {:postgrex, "~> 0.11"},
      {:phoenix_ecto, "~> 3.0.0"},
      {:phoenix_pubsub, "~> 1.0"},
@@ -50,6 +50,7 @@ defmodule ExampleApp.Mixfile do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     ["ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
-     "ecto.reset": ["ecto.drop", "ecto.setup"]]
+     "ecto.reset": ["ecto.drop", "ecto.setup"],
+    "test": ["ecto.create --quiet", "ecto.migrate", "test"]]
   end
 end
